@@ -10,7 +10,7 @@
 
 **Full demo (56 seconds):** set up the restaurant once → take a photo → name the dish → choose and edit a caption → post.
 
-<!-- Paste the user-attachments video URL here on its own line (showcase-playbook.md step 6). -->
+https://github.com/user-attachments/assets/71a29c45-fa2f-4b73-bed0-0a037bb069b3
 
 ## Purpose
 
@@ -44,7 +44,7 @@ flowchart LR
 
 The approach, in five decisions:
 
-- **The model gets facts, not freedom.** Captions are built only from what the owner entered: the dish, the restaurant, the cuisine, the address. The prompt forbids inventing prices, hours or ingredients.
+- **The model writes the style; the owner owns the facts.** Selling words like "crispy" or "perfect for a cold night" are the model's job. Prices, hours, ingredients and offers come only from what the owner entered, and the prompt forbids inventing them.
 - **Nothing posts without the owner.** Every caption is shown and editable before it goes out. The model suggests and the owner publishes.
 - **Code checks the model's hashtags.** Wrong count or format falls back to rule-based tags. If the caption call fails, the owner still gets three plain captions built from the facts.
 - **Prompts are versioned files, not strings in code.** Each prompt is a YAML file with its model, temperature and a changelog, and tests load and check them. The caption prompt went through four versions in under three weeks.
@@ -69,8 +69,8 @@ The approach, in five decisions:
 ## What I learned
 
 - **Sell the barrier you remove, not the seconds you save.** I started with "post in 30 seconds". Owners don't feel short of time; they feel they don't know how. The pitch changed to "post without a designer or copywriter".
-- **Small local models couldn't hold "facts only".** Across 30 dishes, Gemma 3 (1B) added unrequested claims like "creamy" or "authentic" 135 times and Llama 3 (8B) 126 times. Neither produced a clean set for any dish. I moved to GPT-4o-mini.
-- **Rules cut invention; they don't remove it.** Even GPT-4o-mini adds the odd "delightful". That's why the owner sees and edits every caption, and why a facts-only prompt is a constraint, not a guarantee.
+- **Pick the right bar for "hallucination".** My first test counted every word the owner hadn't supplied, like "creamy" or "authentic". Across 30 dishes, small local models failed it 126 to 135 times (Llama 3 8B, Gemma 3 1B). But zero embellishment is the wrong goal for marketing copy: it should sell. The line that matters is facts. A made-up price or a "20% off" the owner never offered is a real problem; "delightful" is not.
+- **Keep a person on anything that makes a promise.** No prompt guarantees the model never invents an offer, so the owner sees and can edit every caption before it posts. In the demo, the owner adds "Deals today!" themselves.
 - **Hashtags need context.** A fixed lookup table gave generic tags like #Yum. Letting the model choose from the restaurant's street, city and cuisine plus a curated pool, with a code check and a fallback, gave tags specific to the place.
 - **Plan manual, then automate.** The first plan was copy-paste into Instagram, to ship faster. Direct posting replaced it once the core flow worked.
 
