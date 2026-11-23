@@ -2,7 +2,7 @@
 
 **A restaurant owner takes a photo of a dish and posts it to Instagram with a caption, without having to write one.**
 
-> Built Early 2026 · Source private
+> Built early 2026 · Source private
 
 <img src="media/flow.gif" width="320" alt="Three caption options for a pizza, one edited, then published and shown live on Instagram">
 
