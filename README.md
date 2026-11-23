@@ -6,7 +6,7 @@
 
 <img src="media/flow.gif" width="320" alt="Three caption options for a pizza, one edited, then published and shown live on Instagram">
 
-*Demo run with a sample restaurant: pick one of three captions, edit it, publish, and the post appears on Instagram.*
+*Demo run with a sample restaurant, posted to my company's test account: pick one of three captions, edit it, publish, and the post appears on Instagram.*
 
 **Full demo (56 seconds):** set up the restaurant once → take a photo → name the dish → choose and edit a caption → post.
 
